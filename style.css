@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 }
 .hero-tag {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 5px;
+  font-size: 18px;
   font-weight: 500;
   color: #d4d4d4;
   margin-bottom: 20px;
