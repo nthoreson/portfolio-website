@@ -1165,7 +1165,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   align-items: start;
   margin-bottom: 20px;
 }
-.wd-card--offset { margin-top: 80px; }
+.wd-card--offset { margin-top: 0; }
 .wd-card {
   background: #e8e8e8;
   border-radius: 20px;
