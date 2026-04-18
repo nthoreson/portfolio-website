@@ -1149,17 +1149,25 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   text-transform: uppercase;
 }
 
+/* Page hero — light variant */
+.page-hero--light { background: #f5f5f5; }
+.page-hero--light h1 { color: #0a0a0a; }
+.page-hero--light .page-lead { color: #525252; }
+.page-hero--light .back-link { color: #737373; }
+.page-hero--light .back-link:hover { color: #16a34a; }
+
 /* Website Design Page — Portfolio Showcase */
-.wd-showcase { padding: 40px 0 100px; }
+.wd-showcase { padding: 40px 0 100px; background: #f5f5f5; }
 .wd-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 20px;
   align-items: start;
+  margin-bottom: 20px;
 }
 .wd-card--offset { margin-top: 80px; }
 .wd-card {
-  background: #efefef;
+  background: #e8e8e8;
   border-radius: 20px;
   overflow: hidden;
   display: block;
@@ -1175,6 +1183,12 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   aspect-ratio: 16 / 10;
   object-fit: cover;
 }
+.wd-card-img--placeholder {
+  aspect-ratio: 16 / 10;
+  background: #d4d4d4;
+  border-radius: 10px 10px 0 0;
+}
+.wd-card--wide .wd-card-img img { aspect-ratio: 21 / 9; }
 .wd-card-footer {
   display: flex;
   align-items: center;
