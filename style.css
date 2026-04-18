@@ -685,6 +685,56 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   .timeline-item::before { left: -33px; }
 }
 
+/* ========== LIGHT SECTION THEME ========== */
+.section-light {
+  background: #f8f8f8 !important;
+}
+.section-light.brands {
+  border-top-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+.section-light .section-eyebrow,
+.section-light .p-label,
+.section-light .exp-year { color: #16a34a; }
+.section-light .section-title,
+.section-light .big-title,
+.section-light h2,
+.section-light h3,
+.section-light h4 { color: #0a0a0a; }
+.section-light .section-sub,
+.section-light .spec-card p,
+.section-light .t-quote,
+.section-light .t-role,
+.section-light .exp-role,
+.section-light .method-intro,
+.section-light .step p,
+.section-light .work-card p,
+.section-light .profile-card p:last-child { color: #525252; }
+.section-light .about-copy { color: #1a1a1a; }
+.section-light .stat-num,
+.section-light .step-num { color: #16a34a; }
+.section-light .stat-label { color: #525252; }
+.section-light .stats-grid { border-top-color: rgba(0, 0, 0, 0.1); }
+.section-light .brand-logos img { filter: grayscale(1) brightness(0.6); }
+.section-light .spec-card,
+.section-light .testimonial,
+.section-light .exp-card,
+.section-light .profile-card,
+.section-light .work-card,
+.section-light .step,
+.section-light .work-tile {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.section-light .t-name,
+.section-light .work-card h4,
+.section-light .work-tile p { color: #0a0a0a; }
+.section-light .work-logo { background: rgba(0, 0, 0, 0.03); }
+.section-light .work-tag {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+}
+
 /* =========================================
    SUBPAGE STYLES (append to style.css)
    ========================================= */
