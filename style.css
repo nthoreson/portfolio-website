@@ -94,7 +94,24 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 .nav-dropdown {
   position: relative;
 }
-.nav-dropdown .caret { font-size: 10px; margin-left: 4px; }
+.nav-dropdown .caret {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  transition: transform .2s;
+}
+.nav-dropdown:hover .caret,
+.nav-dropdown:focus-within .caret {
+  transform: rotate(225deg);
+  top: 1px;
+}
 .dropdown-menu {
   position: absolute;
   top: 100%;
