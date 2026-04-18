@@ -494,7 +494,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 }
 
 /* ---------- TOOLS ---------- */
-.tools { padding: 80px 0; }
+.tools { padding: 80px 0; border-top: 1px solid #e0e0e0; }
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -759,6 +759,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 .section-light .stat-label { color: #525252; }
 .section-light .stats-grid { border-top-color: rgba(0, 0, 0, 0.1); }
 .section-light .brand-logos img { filter: grayscale(1) brightness(0.6); }
+.section-light .tool-grid img { filter: grayscale(1) brightness(0.6); }
 .section-light .spec-card,
 .section-light .testimonial,
 .section-light .exp-card,
