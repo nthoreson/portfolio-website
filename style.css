@@ -429,9 +429,9 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   padding: 32px;
 }
 .profile-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
   object-fit: cover;
   margin-bottom: 20px;
 }
