@@ -506,11 +506,9 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   height: 36px;
   width: auto;
   margin: 0 auto;
-  opacity: 0.6;
-  filter: grayscale(1) brightness(1.5);
-  transition: opacity .2s, filter .2s;
+  transition: opacity .2s;
 }
-.tool-grid img:hover { opacity: 1; filter: none; }
+.tool-grid img:hover { opacity: 0.8; }
 
 /* ---------- METHODOLOGY ---------- */
 .methodology { padding: 100px 0; background: #0d0d0d; }
@@ -759,7 +757,6 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 .section-light .stat-label { color: #525252; }
 .section-light .stats-grid { border-top-color: rgba(0, 0, 0, 0.1); }
 .section-light .brand-logos img { filter: grayscale(1) brightness(0.6); }
-.section-light .tool-grid img { filter: grayscale(1) brightness(0.6); }
 .section-light .spec-card,
 .section-light .testimonial,
 .section-light .exp-card,
