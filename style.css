@@ -1149,6 +1149,87 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   text-transform: uppercase;
 }
 
+/* Website Design Page — Portfolio Showcase */
+.wd-showcase { padding: 40px 0 100px; }
+.wd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.wd-card--offset { margin-top: 80px; }
+.wd-card {
+  background: #efefef;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  transition: transform .2s;
+  text-decoration: none;
+}
+.wd-card:hover { transform: translateY(-4px); }
+.wd-card-img { padding: 24px 24px 0; }
+.wd-card-img img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.wd-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 20px;
+}
+.wd-card-tag {
+  font-size: 13px;
+  color: #737373;
+  font-weight: 500;
+}
+.wd-card-logo {
+  height: 20px;
+  width: auto;
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+/* Website Design Page — Experience Copy */
+.wd-experience {
+  padding: 100px 0;
+  background: #111111;
+}
+.wd-experience .section-eyebrow { color: #4ade80; }
+.wd-experience .big-title { color: #f5f5f5; }
+.wd-experience .section-sub { color: #a3a3a3; }
+.wd-exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px 64px;
+  margin-top: 56px;
+}
+.wd-exp-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4ade80;
+  margin-bottom: 10px;
+}
+.wd-exp-item h3 {
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: #f5f5f5;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.wd-exp-item p { color: #a3a3a3; font-size: 15px; line-height: 1.75; }
+
+@media (max-width: 768px) {
+  .wd-grid { grid-template-columns: 1fr; }
+  .wd-card--offset { margin-top: 0; }
+  .wd-exp-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* CTA banner */
 .cta-banner {
   padding: 80px 0;
