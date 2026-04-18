@@ -541,6 +541,10 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 .step p {
   color: #a3a3a3;
   font-size: 15px;
+  grid-column: 2;
+}
+@media (max-width: 960px) {
+  .step p { grid-column: auto; }
 }
 
 /* ---------- SELECTED WORKS ---------- */
