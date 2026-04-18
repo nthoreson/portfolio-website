@@ -255,30 +255,61 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 
 /* ---------- SPECIALTIES ---------- */
 .specialties { padding: 80px 0; }
+.spec-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.spec-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.spec-heading .section-title { margin-bottom: 0; white-space: nowrap; }
 .card-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+  gap: 32px;
+  margin-top: 0;
 }
 .spec-card {
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 24px;
-  transition: transform .2s, border-color .2s;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  transition: opacity .2s;
   display: flex;
   flex-direction: column;
 }
-.spec-card:hover { transform: translateY(-4px); border-color: #4ade80; }
+.spec-card:hover { transform: none; opacity: 0.85; }
 .spec-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 20px;
 }
-.spec-card h4 { font-size: 22px; margin-bottom: 10px; }
+.spec-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.spec-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 0; }
+.spec-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(74, 222, 128, 0.5);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4ade80;
+  font-size: 14px;
+  flex-shrink: 0;
+}
 .spec-card p { color: #a3a3a3; font-size: 15px; }
 
 /* ---------- TESTIMONIALS ---------- */
