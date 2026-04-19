@@ -29,6 +29,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Testimonials slider
 (function () {
+  const wrapper = document.getElementById('tsTrack') && document.getElementById('tsTrack').parentElement;
   const track = document.getElementById('tsTrack');
   const dots = document.querySelectorAll('.ts-dot');
   const prevBtn = document.getElementById('tsPrev');
@@ -38,20 +39,26 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   const cards = Array.from(track.querySelectorAll('.ts-card'));
   let current = 0;
 
-  function getSlideWidth() {
-    return cards[0].getBoundingClientRect().width + 24;
-  }
-
   function goTo(index) {
     current = Math.max(0, Math.min(index, cards.length - 1));
-    track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
+    cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-  window.addEventListener('resize', () => goTo(current), { passive: true });
+
+  // Sync dot on natural scroll/swipe
+  wrapper.addEventListener('scroll', () => {
+    const scrollLeft = wrapper.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 24;
+    const idx = Math.round(scrollLeft / cardWidth);
+    if (idx !== current) {
+      current = idx;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+  }, { passive: true });
 })();
 
 // Close mobile dropdowns on outside click
