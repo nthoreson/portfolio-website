@@ -690,10 +690,11 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
     gap: 0;
     padding: 24px;
     transform: translateX(100%);
-    transition: transform .3s ease;
+    visibility: hidden;
+    transition: transform .3s ease, visibility .3s ease;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .nav-links.open { transform: translateX(0); }
+  .nav-links.open { transform: translateX(0); visibility: visible; }
   .nav-links > * { width: 100%; padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
   .nav-dropdown .dropdown-menu {
     position: static;
