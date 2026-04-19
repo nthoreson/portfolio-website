@@ -743,6 +743,20 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   .timeline-item::before { left: -33px; }
 }
 
+/* ========== DARK BACKGROUND TEXTURE ========== */
+.dark-bg-texture {
+  position: relative;
+  isolation: isolate;
+}
+.dark-bg-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://cdn.prod.website-files.com/62ed6adbde80f127c7615f6b/6889903c942270565457b326_unsplash_hnysCJrPpkc.jpg') center / cover no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
 /* ========== LIGHT SECTION THEME ========== */
 .section-light {
   background: #f8f8f8 !important;
