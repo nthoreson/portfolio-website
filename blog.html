@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Nate Thoreson</title>
+<meta name="description" content="Marketing, web design, and AI insights from Nate Thoreson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">njt<span class="dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <div class="nav-dropdown">
+        <button class="nav-item">Specialties <span class="caret"></span></button>
+        <div class="dropdown-menu">
+          <a href="website-design.html">Website Design</a>
+          <a href="marketing-strategy.html">Marketing Strategy</a>
+          <a href="artificial-intelligence.html">AI Automation</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-item">Key Experience <span class="caret"></span></button>
+        <div class="dropdown-menu">
+          <a href="index.html#experience">See All</a>
+          <a href="lean-marketing.html">Lean Marketing</a>
+          <a href="webblen.html">Webblen</a>
+          <a href="moore-holding.html">Moore Holding</a>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-item">Blog</a>
+      <a href="index.html#contact" class="nav-item">Contact</a>
+      <a href="https://www.linkedin.com/in/nathaniel-j-thoreson/" target="_blank" rel="noopener" class="nav-item">LinkedIn</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero dark-bg-texture">
+  <div class="container">
+    <span class="eyebrow">Blog</span>
+    <h1>Thoughts on Marketing, Design & AI</h1>
+    <p class="page-lead">Practical insights from building marketing systems for 150+ businesses.</p>
+  </div>
+</section>
+
+<section class="blog-listing section-light">
+  <div class="container">
+    <div class="blog-grid">
+
+      <!-- POST: duplicate this block to add more posts -->
+      <a class="blog-card" href="blog/post-template.html">
+        <div class="blog-card-meta">
+          <span class="blog-tag">Marketing Strategy</span>
+          <span class="blog-date">April 2026</span>
+        </div>
+        <h2 class="blog-card-title">Why Most Marketing Strategies Fail Before They Start</h2>
+        <p class="blog-card-excerpt">Most founders skip the foundation and go straight to tactics. Here's the single step that determines whether everything else works.</p>
+        <span class="blog-read-more">Read more →</span>
+      </a>
+
+      <a class="blog-card" href="blog/post-template.html">
+        <div class="blog-card-meta">
+          <span class="blog-tag">Website Design</span>
+          <span class="blog-date">March 2026</span>
+        </div>
+        <h2 class="blog-card-title">What Makes a Website Actually Convert</h2>
+        <p class="blog-card-excerpt">It's not the color scheme. It's not the animations. The sites that convert have one thing in common — and most designers ignore it.</p>
+        <span class="blog-read-more">Read more →</span>
+      </a>
+
+      <a class="blog-card" href="blog/post-template.html">
+        <div class="blog-card-meta">
+          <span class="blog-tag">AI Automation</span>
+          <span class="blog-date">February 2026</span>
+        </div>
+        <h2 class="blog-card-title">The 3 AI Tools I Use Every Week as a Marketing Operator</h2>
+        <p class="blog-card-excerpt">Not ChatGPT prompts. Actual systems built into my workflow that save hours and improve output quality across clients.</p>
+        <span class="blog-read-more">Read more →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <a href="index.html" class="logo">njt<span class="dot">.</span></a>
+    <p>© <span id="year"></span> Nate Thoreson. Marketing Operator. Minneapolis, MN.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
