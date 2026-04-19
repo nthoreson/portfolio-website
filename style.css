@@ -816,6 +816,19 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   background: rgba(22, 163, 74, 0.1);
   color: #16a34a;
 }
+.section-light .numbers-block {
+  background: #fff;
+}
+.section-light .num-item { color: #171717; }
+.section-light .num-item p { color: #525252; }
+.section-light .big-num { color: #16a34a; }
+.section-light .article-card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.section-light .article-card h4 { color: #0a0a0a; }
+.section-light .article-date { color: #525252; }
+.section-light .feature-body { color: #404040; }
 
 /* =========================================
    AI PAGE
