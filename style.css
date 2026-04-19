@@ -330,35 +330,94 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 }
 .spec-card p { color: #a3a3a3; font-size: 15px; }
 
-/* ---------- TESTIMONIALS ---------- */
-.testimonials { padding: 100px 0; background: #0d0d0d; }
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+/* ---------- TESTIMONIALS SLIDER ---------- */
+.testimonials { padding: 100px 0; }
+.ts-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
   gap: 24px;
-  margin-top: 32px;
 }
-.testimonial {
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.ts-header .section-title { margin-bottom: 8px; }
+.ts-nav { display: flex; gap: 10px; flex-shrink: 0; }
+.ts-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #d4d4d4;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.ts-btn:hover { background: #171717; border-color: #171717; color: #fff; }
+.ts-wrapper { overflow: hidden; }
+.ts-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ts-card {
+  flex: 0 0 calc(60% - 10px);
+  background: #fff;
+  border: 1px solid #e5e5e5;
   border-radius: 20px;
-  padding: 32px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.t-avatar {
-  width: 56px;
-  height: 56px;
+.ts-quote-mark {
+  font-family: 'Instrument Serif', serif;
+  font-size: 72px;
+  line-height: 1;
+  color: #22c55e;
+  margin-bottom: -12px;
+}
+.ts-quote {
+  font-size: 16px;
+  color: #404040;
+  line-height: 1.75;
+  flex: 1;
+}
+.ts-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+.ts-avatar {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
+  flex-shrink: 0;
 }
-.t-quote {
-  font-size: 16px;
-  color: #e5e5e5;
-  margin-bottom: 20px;
-  line-height: 1.6;
+.ts-name { font-weight: 600; font-size: 15px; color: #171717; margin-bottom: 2px; }
+.ts-role { font-size: 13px; color: #737373; }
+.ts-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 28px;
+  justify-content: center;
 }
-.t-name { font-weight: 600; margin-bottom: 2px; }
-.t-role { color: #a3a3a3; font-size: 14px; }
+.ts-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+  background: #d4d4d4;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.3s, background 0.3s;
+}
+.ts-dot.active { width: 24px; background: #22c55e; }
 
 /* ---------- KEY EXPERIENCES ---------- */
 .key-experiences { padding: 100px 0; }
@@ -714,6 +773,8 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   .stats-grid,
   .card-grid-3,
   .exp-grid,
+  .ts-card { flex: 0 0 calc(90% - 10px); }
+  .ts-header { flex-direction: column; align-items: flex-start; }
   .testimonial-grid,
   .profile-grid,
   .work-grid,
