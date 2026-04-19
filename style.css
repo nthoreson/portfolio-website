@@ -356,14 +356,18 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .ts-btn:hover { background: #171717; border-color: #171717; color: #fff; }
-.ts-wrapper { overflow: hidden; }
+.ts-wrapper { overflow: hidden; width: 100%; }
 .ts-track {
   display: flex;
-  gap: 20px;
+  flex-wrap: nowrap;
+  gap: 24px;
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 .ts-card {
-  flex: 0 0 auto;
+  width: 620px;
+  min-width: 620px;
+  max-width: 620px;
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 20px;
@@ -371,6 +375,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-sizing: border-box;
 }
 .ts-quote-mark {
   font-family: 'Instrument Serif', serif;
@@ -774,6 +779,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   .card-grid-3,
   .exp-grid,
   .ts-header { flex-direction: column; align-items: flex-start; }
+  .ts-card { width: calc(100vw - 72px); min-width: calc(100vw - 72px); max-width: calc(100vw - 72px); }
   .testimonial-grid,
   .profile-grid,
   .work-grid,
