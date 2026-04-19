@@ -1689,6 +1689,10 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   color: #4ade80;
 }
 
+@media (max-width: 960px) {
+  .cs-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- LIGHT PAGE (Microsoft, etc.) ---------- */
 .light-page { background: #fafafa; color: #171717; }
 .light-page .numbers-block {
