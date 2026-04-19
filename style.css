@@ -1602,6 +1602,34 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 .post-content ul { padding-left: 24px; margin-bottom: 20px; }
 .post-content li { margin-bottom: 8px; }
 
+/* ---------- LIGHT PAGE (Microsoft, etc.) ---------- */
+.light-page { background: #fafafa; color: #171717; }
+.light-page .numbers-block {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.light-page .num-item h4 { color: #171717; }
+.light-page .num-item p { color: #525252; }
+.light-page .web-work { background: #fafafa; }
+.light-page .big-title { color: #171717; }
+.light-page .section-sub { color: #525252; }
+.light-page .section-eyebrow { color: #16a34a; }
+.light-page .role-card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.light-page .role-card h3 { color: #171717; }
+.light-page .role-card .role-date { color: #737373; }
+.light-page .role-card .role-summary { color: #404040; }
+.light-page .role-card ul li { color: #525252; }
+.light-page .role-card .callout {
+  background: rgba(22, 163, 74, 0.06);
+  color: #171717;
+}
+.light-page .role-metrics { border-top-color: rgba(0, 0, 0, 0.08); }
+.light-page .role-metric .m-label { color: #737373; }
+.light-page .specialties.section-light .spec-card p { color: #525252; }
+
 /* ---------- DROPCHAIN ---------- */
 .dc-waterfall { padding: 100px 0; }
 .dc-waterfall-img {
