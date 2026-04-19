@@ -794,10 +794,18 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 .section-light .profile-card,
 .section-light .work-card,
 .section-light .step,
-.section-light .work-tile {
+.section-light .work-tile,
+.section-light .story-card,
+.section-light .pillar {
   background: #ffffff;
   border-color: rgba(0, 0, 0, 0.08);
 }
+.section-light .story-card h3 { color: #16a34a; }
+.section-light .story-card p { color: #525252; }
+.section-light .pillar h4 { color: #0a0a0a; }
+.section-light .pillar p { color: #525252; }
+.section-light .pillar::before { color: #16a34a; }
+.section-light .method-intro { color: #525252; }
 .section-light .t-name,
 .section-light .work-card h4,
 .section-light .work-tile p { color: #0a0a0a; }
