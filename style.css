@@ -1403,14 +1403,14 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   text-transform: uppercase;
 }
 
-/* Page hero — light variant */
+/* Page hero, light variant */
 .page-hero--light { background: #f5f5f5; }
 .page-hero--light h1 { color: #0a0a0a; }
 .page-hero--light .page-lead { color: #525252; }
 .page-hero--light .back-link { color: #737373; }
 .page-hero--light .back-link:hover { color: #16a34a; }
 
-/* Website Design Page — Portfolio Showcase */
+/* Website Design Page, Portfolio Showcase */
 .wd-showcase { padding: 40px 0 100px; background: #f5f5f5; }
 .wd-grid {
   display: grid;
@@ -1461,7 +1461,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   filter: grayscale(1);
 }
 
-/* Website Design Page — Experience Copy */
+/* Website Design Page, Experience Copy */
 .wd-experience {
   padding: 100px 0;
   background: #111111;
