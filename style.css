@@ -512,12 +512,12 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 }
 
 /* ---------- TOOLS ---------- */
-.tools { padding: 80px 0; border-top: 1px solid #e0e0e0; }
+.tools { padding: 80px 0; }
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 40px 32px;
-  margin-top: 32px;
+  margin-top: 56px;
 }
 .tool-grid img {
   width: 100%;
@@ -1692,6 +1692,50 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
 @media (max-width: 960px) {
   .cs-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- SECTION GREY ---------- */
+.section-grey {
+  background: #f0f0f0;
+  color: #171717;
+}
+.section-grey .section-eyebrow,
+.section-grey .p-label { color: #16a34a; }
+.section-grey .section-title,
+.section-grey .big-title,
+.section-grey h2,
+.section-grey h3,
+.section-grey h4 { color: #0a0a0a; }
+.section-grey .section-sub,
+.section-grey .method-intro { color: #525252; }
+/* cs-cards */
+.section-grey .cs-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.section-grey .cs-title { color: #0a0a0a; }
+.section-grey .cs-desc { color: #525252; }
+.section-grey .cs-footer { border-top-color: rgba(0, 0, 0, 0.08); }
+.section-grey .cs-client { color: #737373; }
+/* work tiles (Selected Works) */
+.section-grey .work-tile {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.section-grey .work-tile p { color: #0a0a0a; }
+/* profile cards */
+.section-grey .profile-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.section-grey .profile-card h4 { color: #0a0a0a; }
+.section-grey .profile-card p { color: #525252; }
+
+/* ---------- TIMELINE LIGHT OVERRIDES ---------- */
+.experience.section-light { background: #ffffff; }
+.section-light .timeline { border-left-color: rgba(22, 163, 74, 0.3); }
+.section-light .timeline-item::before { box-shadow: 0 0 0 4px #ffffff; }
+.section-light .t-company { color: #171717; }
+.section-light .timeline-item p:last-child { color: #525252; }
 
 /* ---------- LIGHT PAGE (Microsoft, etc.) ---------- */
 .light-page { background: #fafafa; color: #171717; }
