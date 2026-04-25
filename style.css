@@ -1551,6 +1551,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 16px;
   padding: 32px;
+  overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
@@ -1812,8 +1813,10 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   .role-metrics { grid-template-columns: repeat(2, 1fr); }
   .pillar { grid-template-columns: 1fr; gap: 12px; }
   .pillar::before { font-size: 22px; }
+  .blog-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
   .numbers-grid, .numbers-grid.four { grid-template-columns: 1fr; }
   .page-hero-image { aspect-ratio: 4 / 3; }
+  .blog-listing { padding: 48px 0 60px; }
 }
