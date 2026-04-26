@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #111111;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 32px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4ade80;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .card-date {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4ade80;
+    margin-bottom: 12px;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.65;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-desc.expanded {
+    display: block;
+    -webkit-line-clamp: unset;
+  }
+
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: #4ade80;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0 0;
+    display: block;
+  }
+
+  .toggle-btn:hover { color: #86efac; }
+
+  .card-footer {
+    margin-top: 16px;
+  }
+
+  .rsvp-btn {
+    display: inline-block;
+    background: #4ade80;
+    color: #111111;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.15s;
+  }
+
+  .rsvp-btn:hover { background: #86efac; }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #555555;
+  }
+
+  .empty-state p:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 8px;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #555555;
+    font-size: 14px;
+  }
+
+  .error-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #f87171;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Upcoming Events</h1>
+  <div id="root"><div class="loading">Loading events...</div></div>
+</div>
+
+<script>
+(function () {
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  function formatDate(isoString) {
+    const date = new Date(isoString);
+    const datePart = new Intl.DateTimeFormat('en-US', {
+      timeZone: tz,
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    }).format(date);
+    const timePart = new Intl.DateTimeFormat('en-US', {
+      timeZone: tz,
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    }).format(date);
+    const tzAbbr = new Intl.DateTimeFormat('en-US', {
+      timeZone: tz,
+      timeZoneName: 'short',
+    }).formatToParts(date).find(p => p.type === 'timeZoneName')?.value ?? tz;
+    return `${datePart} at ${timePart} ${tzAbbr}`;
+  }
+
+  function needsTruncation(text) {
+    // Rough line count: count newlines + estimate wraps
+    const lines = text.split('\n').length;
+    return lines > 3 || text.length > 220;
+  }
+
+  function buildCard(event) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const title = document.createElement('div');
+    title.className = 'card-title';
+    title.textContent = event.title;
+    card.appendChild(title);
+
+    const dateEl = document.createElement('div');
+    dateEl.className = 'card-date';
+    dateEl.textContent = formatDate(event.start_time);
+    card.appendChild(dateEl);
+
+    const desc = event.description ? event.description.replace(/<[^>]*>/g, '').trim() : '';
+
+    if (desc) {
+      const descEl = document.createElement('div');
+      descEl.className = 'card-desc';
+      descEl.textContent = desc;
+      card.appendChild(descEl);
+
+      if (needsTruncation(desc)) {
+        const btn = document.createElement('button');
+        btn.className = 'toggle-btn';
+        btn.textContent = 'Read more';
+        btn.addEventListener('click', () => {
+          const expanded = descEl.classList.toggle('expanded');
+          btn.textContent = expanded ? 'Show less' : 'Read more';
+        });
+        card.appendChild(btn);
+      }
+    }
+
+    const footer = document.createElement('div');
+    footer.className = 'card-footer';
+    const rsvp = document.createElement('a');
+    rsvp.className = 'rsvp-btn';
+    rsvp.href = event.event_url;
+    rsvp.target = '_blank';
+    rsvp.rel = 'noopener noreferrer';
+    rsvp.textContent = 'RSVP';
+    footer.appendChild(rsvp);
+    card.appendChild(footer);
+
+    return card;
+  }
+
+  function render(events) {
+    const root = document.getElementById('root');
+    root.innerHTML = '';
+
+    const now = new Date();
+    const upcoming = events
+      .filter(e => e.start_time && new Date(e.start_time) > now)
+      .sort((a, b) => new Date(a.start_time) - new Date(b.start_time));
+
+    if (upcoming.length === 0) {
+      root.innerHTML = '<div class="empty-state"><p>No upcoming events</p><p>Check back soon for new events.</p></div>';
+      return;
+    }
+
+    const list = document.createElement('div');
+    list.className = 'events-list';
+    upcoming.forEach(e => list.appendChild(buildCard(e)));
+    root.appendChild(list);
+  }
+
+  fetch('/api/events')
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(render)
+    .catch(err => {
+      document.getElementById('root').innerHTML =
+        `<div class="error-state">Failed to load events. Please try again later.<br><small>${err.message}</small></div>`;
+    });
+})();
+</script>
+</body>
+</html>
