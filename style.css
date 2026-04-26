@@ -1,6 +1,6 @@
 /* ---------- RESET + BASE ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: #111111;
@@ -55,6 +55,17 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   max-width: 720px;
 }
 .mb-lg { margin-bottom: 48px; }
+
+/* ---------- SCROLL ANIMATIONS ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ---------- NAV ---------- */
 .nav {
@@ -1540,6 +1551,7 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 16px;
   padding: 32px;
+  overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
@@ -2139,4 +2151,11 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   .vs-email-stat:last-child { border-bottom: 0; }
   .vs-metrics { flex-wrap: wrap; gap: 24px; }
   .vs-takeaway-grid { grid-template-columns: 1fr !important; }
+}
+/* Blog grid mobile fix — must come after .blog-grid definition to win cascade */
+@media (max-width: 960px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .blog-listing { padding: 48px 0 60px; }
 }
