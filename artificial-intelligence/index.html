@@ -12,10 +12,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Automation | Nate Thoreson</title>
-<meta name="description" content="AI systems built for marketing teams — product creation, data analysis, content automation, and workflow tools that actually ship.">
+<meta name="description" content="AI systems built for marketing teams: product creation, data analysis, content automation, and workflow tools that actually ship.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
 /* =========================================================
@@ -72,7 +72,7 @@ body{ background:var(--ink); }
   font-size:clamp(38px, 5.2vw, 80px); margin:0;
 }
 .aix-h1 .ser{
-  font-style:italic; font-weight:400;
+  font-style:italic;
   letter-spacing:-0.01em; color:var(--green);
 }
 .aix-h1 .blk{ display:block; }
@@ -188,7 +188,7 @@ body{ background:var(--ink); }
   font-weight:800; letter-spacing:-0.04em; line-height:0.95;
   font-size:clamp(40px,5.5vw,76px); margin:14px 0 0;
 }
-.aix-work-intro h2 .ser{ font-style:italic; font-weight:400; color:var(--green); }
+.aix-work-intro h2 .ser{ font-style:italic; color:var(--green); }
 .aix-work-intro p{ font-size:17px; line-height:1.6; color:#a9a69c; margin:0; max-width:460px; }
 
 .aix-chapter{ position:relative; border-top:1px solid var(--line); padding:78px 0; }
@@ -211,7 +211,7 @@ body{ background:var(--ink); }
   font-size:clamp(26px,2.7vw,38px); font-weight:800; letter-spacing:-0.03em;
   line-height:1.08; color:#f4f1e9; margin:0 0 4px; max-width:14ch;
 }
-.aix-ch-title .ser{ font-style:italic; font-weight:400; color:var(--green); }
+.aix-ch-title .ser{ font-style:italic; color:var(--green); }
 .aix-ch-copy p{ font-size:16px; line-height:1.8; color:#b4b1a7; margin:0 0 20px; }
 .aix-ch-copy p:last-child{ margin-bottom:0; }
 .aix-ch-copy .dropcap::first-letter{
@@ -258,19 +258,17 @@ body{ background:var(--ink); }
 .aix-pipe .node.end{ border-color:var(--green); color:var(--green); }
 .aix-pipe .arr{ color:var(--green); font-family:var(--mono); }
 
-/* sync ledger */
-.aix-sync{ font-family:var(--mono); font-size:13px; }
-.aix-sync-row{
-  display:flex; justify-content:space-between; align-items:center;
-  padding:11px 0; border-bottom:1px dashed var(--line-soft); color:#cfccc2;
-}
-.aix-sync-row .ok{ color:var(--green); letter-spacing:0.1em; }
-.aix-sync-total{
-  margin-top:16px; padding-top:16px; border-top:1px solid var(--line);
-  font-family:var(--mono); font-size:13px; letter-spacing:0.18em; text-transform:uppercase;
-  color:#fff; display:flex; justify-content:space-between; align-items:center;
-}
-.aix-sync-total b{ color:var(--green); font-weight:700; }
+/* before/after */
+.aix-before-after{ display:grid; grid-template-columns:1fr 1px 1fr; gap:0 28px; align-items:start; }
+.aix-ba-divider{ background:var(--line); }
+.aix-ba-col{ padding:4px 0; }
+.aix-ba-head{ font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted-d); margin-bottom:16px; }
+.aix-ba-col--after .aix-ba-head{ color:var(--green); }
+.aix-ba-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.aix-ba-list li{ font-size:14px; line-height:1.5; color:#b4b1a7; padding-left:14px; position:relative; }
+.aix-ba-list li::before{ content:''; position:absolute; left:0; top:9px; width:6px; height:1px; background:var(--muted-d); }
+.aix-ba-col--after .aix-ba-list li{ color:#e6e3d9; }
+.aix-ba-col--after .aix-ba-list li::before{ background:var(--green); }
 
 /* result strip per chapter */
 .aix-result{
@@ -294,7 +292,7 @@ body{ background:var(--ink); }
   font-weight:800; letter-spacing:-0.04em; line-height:0.98;
   font-size:clamp(40px,6vw,82px); margin:0 auto 22px; max-width:14ch;
 }
-.aix-cta h2 .ser{ font-style:italic; font-weight:400; color:var(--green); }
+.aix-cta h2 .ser{ font-style:italic; color:var(--green); }
 .aix-cta p{ font-size:18px; color:#a9a69c; max-width:520px; margin:0 auto 38px; line-height:1.6; }
 
 /* ====================== RESPONSIVE ====================== */
@@ -312,6 +310,8 @@ body{ background:var(--ink); }
   .aix-hero{ padding:60px 0 0; }
   .aix-ch-num{ font-size:84px; }
   .aix-result{ flex-direction:column; align-items:flex-start; gap:10px; }
+  .aix-before-after{ grid-template-columns:1fr; gap:24px 0; }
+  .aix-ba-divider{ display:none; }
 }
 </style>
 </head>
@@ -363,7 +363,7 @@ body{ background:var(--ink); }
           <span class="blk"><span class="ser">built to move</span></span>
           <span class="blk">the number.</span>
         </h1>
-        <p class="aix-lead">I've built 20+ AI tools for marketing teams. Products that ship, pipelines that run in production, automation that holds up under real client load. Every project in this file was built to move a specific number — not to demo well in a deck.</p>
+        <p class="aix-lead">I've built 20+ AI tools for marketing teams. Products that ship, pipelines that run in production, automation that holds up under real client load. Every project in this file was built to move a specific number, not to demo well in a deck.</p>
         <div class="aix-cta-row">
           <a href="/#contact" class="aix-btn aix-btn-fill">Get In Touch</a>
           <a href="https://chatgpt.com/g/g-68c48228ce748191a1961bc6df79fe5f-homepage-writer-gpt-lean-marketing" target="_blank" rel="noopener" class="aix-btn aix-btn-ghost">Try a GPT free →</a>
@@ -402,14 +402,14 @@ body{ background:var(--ink); }
   <section class="aix-paper">
     <div class="wrap aix-ledger">
       <div class="aix-ledger-head">
-        <span class="meta">§ 01 — Evidence</span>
+        <span class="meta">§ 01: Evidence</span>
         <h2>By the numbers</h2>
       </div>
       <div class="aix-stat-rows">
         <div class="aix-stat-row">
           <div class="aix-stat-fig">20+</div>
           <div class="aix-stat-name"><span class="tick">Output</span>AI products built</div>
-          <p class="aix-stat-desc">Custom tools and automations built for clients and internal teams — all in active production, not sitting in a sandbox.</p>
+          <p class="aix-stat-desc">Custom tools and automations built for clients and internal teams, all in active production, not sitting in a sandbox.</p>
         </div>
         <div class="aix-stat-row">
           <div class="aix-stat-fig"><span class="was">19%</span> <span class="arrow">→</span> 70%</div>
@@ -419,7 +419,7 @@ body{ background:var(--ink); }
         <div class="aix-stat-row">
           <div class="aix-stat-fig">15+</div>
           <div class="aix-stat-name"><span class="tick">Reclaimed</span>Weekly hours saved</div>
-          <p class="aix-stat-desc">Recurring automations that quietly delete manual, repetitive work for the team — every week, with no babysitting.</p>
+          <p class="aix-stat-desc">Recurring automations that quietly delete manual, repetitive work for the team, running every week without babysitting.</p>
         </div>
       </div>
     </div>
@@ -429,15 +429,15 @@ body{ background:var(--ink); }
   <section class="aix-manifesto">
     <div class="wrap aix-mani-grid">
       <div class="aix-mani-left">
-        <span class="meta">§ 02 — The Approach</span>
-        <p class="aix-creed">Small teams should not have to move slow. The hours a good marketer spends on predictable work are hours that <em>compound into nothing</em> — while the irreplaceable work waits. That gap is what I build AI to close.</p>
+        <span class="meta">§ 02: The Approach</span>
+        <p class="aix-creed">Small teams should not have to move slow. The hours a good marketer spends on predictable work are hours that <em>compound into nothing</em>, while the irreplaceable work waits. That gap is what I build AI to close.</p>
       </div>
       <div class="aix-principles">
         <div class="aix-principle">
           <span class="pn">P.01</span>
           <div>
             <h3>Real products, in production</h3>
-            <p>Every tool I build is live, in use, and load-bearing for the team that runs it. The bar for shipping is whether the team would feel its absence if it disappeared tomorrow — a higher bar than "it worked in testing," and the only one that produces durable systems.</p>
+            <p>Every tool I build is live, in use, and load-bearing for the team that runs it. The bar for shipping is whether the team would feel its absence if it disappeared tomorrow, a higher bar than "it worked in testing," and the only one that produces durable systems.</p>
           </div>
         </div>
         <div class="aix-principle">
@@ -462,7 +462,7 @@ body{ background:var(--ink); }
   <section class="aix-work-intro">
     <div class="wrap">
       <div>
-        <span class="meta">§ 03 — The Work</span>
+        <span class="meta">§ 03: The Work</span>
         <h2>Four <span class="ser">case</span><br>studies.</h2>
       </div>
       <p>Four areas where I've shipped AI systems that produced measurable change inside real businesses. Each one starts with a problem worth solving and ends with a number that moved.</p>
@@ -473,7 +473,7 @@ body{ background:var(--ink); }
   <section class="aix-chapter">
     <div class="wrap">
       <div class="aix-ch-tab">
-        <span class="meta">CH. 01 — Product Creation</span>
+        <span class="meta">CH. 01: Product Creation</span>
         <span class="meta meta-dim">STACK: CLAUDE / N8N / OPENAI / WEBFLOW / HUBSPOT</span>
       </div>
       <div class="aix-ch-body">
@@ -482,12 +482,12 @@ body{ background:var(--ink); }
           <h3 class="aix-ch-title">AI products that ship <span class="ser">and get used</span></h3>
         </div>
         <div class="aix-ch-copy">
-          <p class="dropcap">Most AI work gets stuck in prototype mode — the difference between an interesting experiment and a tool people open every day. The work in this file went into production and stayed there.</p>
-          <p>This portfolio site was built with Claude Code as a development partner, end to end. The <strong>1PMP Architect</strong> is a multi-step AI agent that generates a complete marketing plan from raw client inputs in under 15 minutes — used by 100+ founders inside the Lean Marketing Accelerator to produce strategy documents that previously took days. <strong>Lean Intelligence</strong> is an internal analytics dashboard that gives advisors a live view across 80+ client accounts without digging through five separate tools, eliminating the manual report-pull that used to eat hours a week.</p>
+          <p class="dropcap">Most AI work gets stuck in prototype mode: the difference between an interesting experiment and a tool people open every day. The work in this file went into production and stayed there.</p>
+          <p>This portfolio site was built with Claude Code as a development partner, end to end. The <strong>1PMP Architect</strong> is a multi-step AI agent that generates a complete marketing plan from raw client inputs in under 15 minutes, used by 100+ founders inside the Lean Marketing Accelerator to produce strategy documents that previously took days. <strong>Lean Intelligence</strong> is an internal analytics dashboard that gives advisors a live view across 80+ client accounts without digging through five separate tools, eliminating the manual report-pull that used to eat hours a week.</p>
 
           <div class="aix-exhibit">
             <div class="aix-exhibit-cap">
-              <span>EXHIBIT A — <span class="green">live automation workflow</span></span>
+              <span>EXHIBIT A: <span class="green">live automation workflow</span></span>
               <span>FIG. 01</span>
             </div>
             <img class="aix-shot" src="https://cdn.prod.website-files.com/62ed6adbde80f127c7615f6b/69124120dbc2f1a2442047d9_Screenshot%202025-11-10%20at%201.40.52%E2%80%AFPM.png" alt="AI automation workflow built in production">
@@ -506,7 +506,7 @@ body{ background:var(--ink); }
   <section class="aix-chapter">
     <div class="wrap">
       <div class="aix-ch-tab">
-        <span class="meta">CH. 02 — Data Analysis</span>
+        <span class="meta">CH. 02: Data Analysis</span>
         <span class="meta meta-dim">STACK: CLAUDE / HUBSPOT / N8N / TRANSCRIPT ANALYSIS</span>
       </div>
       <div class="aix-ch-body">
@@ -515,12 +515,12 @@ body{ background:var(--ink); }
           <h3 class="aix-ch-title">Turning client data into <span class="ser">renewal revenue</span></h3>
         </div>
         <div class="aix-ch-copy">
-          <p class="dropcap">At Lean Marketing, clients were coming up for renewal without a clear way to see the value they'd built. Advisors went into those conversations on instinct — which produces exactly the renewal rate you'd expect when nobody has the receipts in front of them.</p>
-          <p>I built an AI system that pulled every piece of engagement data per client — coaching call transcripts, health scores, milestone wins, support interactions, session attendance, sentiment signals — and synthesized it into a single report per account. Internally we called it <strong>holding up the mirror</strong>, because it showed clients what they'd actually built over the engagement, in evidence rather than narrative. Advisors walked into renewals with the data instead of the pitch, and the numbers followed.</p>
+          <p class="dropcap">At Lean Marketing, clients were coming up for renewal without a clear way to see the value they'd built. Advisors went into those conversations on instinct, which produces exactly the renewal rate you'd expect when nobody has the receipts in front of them.</p>
+          <p>I built an AI system that pulled every piece of engagement data per client: coaching call transcripts, health scores, milestone wins, support interactions, session attendance, sentiment signals, and synthesized it into a single report per account. Internally we called it <strong>holding up the mirror</strong>, because it showed clients what they'd actually built over the engagement, in evidence rather than narrative. Advisors walked into renewals with the data instead of the pitch, and the numbers followed.</p>
 
           <div class="aix-exhibit">
             <div class="aix-exhibit-cap">
-              <span>EXHIBIT B — <span class="green">renewal rate, before vs. after</span></span>
+              <span>EXHIBIT B: <span class="green">renewal rate, before vs. after</span></span>
               <span>FIG. 02</span>
             </div>
             <div class="aix-viz">
@@ -550,7 +550,7 @@ body{ background:var(--ink); }
   <section class="aix-chapter">
     <div class="wrap">
       <div class="aix-ch-tab">
-        <span class="meta">CH. 03 — Content Creation</span>
+        <span class="meta">CH. 03: Content Creation</span>
         <span class="meta meta-dim">STACK: CLAUDE / WHISPER / N8N / CUSTOM GPTS</span>
       </div>
       <div class="aix-ch-body">
@@ -559,12 +559,12 @@ body{ background:var(--ink); }
           <h3 class="aix-ch-title">Calls in, <span class="ser">content out</span></h3>
         </div>
         <div class="aix-ch-copy">
-          <p class="dropcap">The best marketing content for a business is usually buried inside it — sitting in client conversations, advisor insights, and the stories that never get written down. Most teams know this and still can't operationalize it, because the path from "we said something useful on a call" to "we have a finished post" takes hours of manual lift nobody has.</p>
-          <p>I built a content pipeline at Lean Marketing that starts with coaching call recordings and ends with finished drafts. Recordings get transcribed, run through a prompt pipeline that extracts insights, client wins, and teachable moments, then routed into LinkedIn posts, email sequences, and blog drafts. The voice is a <strong>trained model built from real content examples, not a template</strong> — so the output sounds like the company, instead of like every other AI content stack on the market.</p>
+          <p class="dropcap">The best marketing content for a business is usually buried inside it, sitting in client conversations, advisor insights, and the stories that never get written down. Most teams know this and still can't operationalize it, because the path from "we said something useful on a call" to "we have a finished post" takes hours of manual lift nobody has.</p>
+          <p>I built a content pipeline at Lean Marketing that starts with coaching call recordings and ends with finished drafts. Recordings get transcribed, run through a prompt pipeline that extracts insights, client wins, and teachable moments, then routed into LinkedIn posts, email sequences, and blog drafts. The voice is a <strong>trained model built from real content examples, not a template</strong>, so the output sounds like the company, instead of like every other AI content stack on the market.</p>
 
           <div class="aix-exhibit">
             <div class="aix-exhibit-cap">
-              <span>EXHIBIT C — <span class="green">the content pipeline</span></span>
+              <span>EXHIBIT C: <span class="green">the content pipeline</span></span>
               <span>FIG. 03</span>
             </div>
             <div class="aix-viz">
@@ -584,7 +584,7 @@ body{ background:var(--ink); }
 
           <div class="aix-result">
             <div class="rfig">&lt; 20 min</div>
-            <div class="rtxt"><b>Turnaround</b>A 60-minute coaching call becomes 3–5 finished content pieces — grounded in real conversation, not a blank page.</div>
+            <div class="rtxt"><b>Turnaround</b>A 60-minute coaching call becomes 3–5 finished content pieces, grounded in real conversation, not a blank page.</div>
           </div>
         </div>
       </div>
@@ -595,7 +595,7 @@ body{ background:var(--ink); }
   <section class="aix-chapter">
     <div class="wrap">
       <div class="aix-ch-tab">
-        <span class="meta">CH. 04 — Automation</span>
+        <span class="meta">CH. 04: Automation</span>
         <span class="meta meta-dim">STACK: N8N / HUBSPOT / NOTION / MAKE / SLACK / ZAPIER</span>
       </div>
       <div class="aix-ch-body">
@@ -604,21 +604,34 @@ body{ background:var(--ink); }
           <h3 class="aix-ch-title">One source of truth for <span class="ser">the whole team</span></h3>
         </div>
         <div class="aix-ch-copy">
-          <p class="dropcap">Most marketing teams have their data spread across five tools with nothing keeping any of it in sync. Advisors chase updates, managers build manual reports, and nobody works from the same picture — which means every decision is being made on data that's some flavor of stale.</p>
-          <p>At Lean Marketing, I built a set of automations that created a single source of truth the whole team could trust. New client onboards, coaching notes, milestone hits, and health score changes flow into the right places automatically — <strong>the system handles the routing, the humans handle the advising</strong>. The team stopped chasing spreadsheets and started spending their time on the work that actually moves accounts.</p>
+          <p class="dropcap">Most marketing teams have their data spread across five tools with nothing keeping any of it in sync. Advisors chase updates, managers build manual reports, and nobody works from the same picture, meaning every decision is being made on data that's some flavor of stale.</p>
+          <p>At Lean Marketing, I built a set of automations that created a single source of truth the whole team could trust. New client onboards, coaching notes, milestone hits, and health score changes flow into the right places automatically. The system handles the routing, the humans handle the advising. The team stopped chasing spreadsheets and started spending their time on the work that actually moves accounts.</p>
 
           <div class="aix-exhibit">
             <div class="aix-exhibit-cap">
-              <span>EXHIBIT D — <span class="green">sources, synced</span></span>
+              <span>EXHIBIT D: <span class="green">before and after</span></span>
               <span>FIG. 04</span>
             </div>
-            <div class="aix-viz aix-sync">
-              <div class="aix-sync-row"><span>HubSpot · deals &amp; contacts</span><span class="ok">✓ SYNCED</span></div>
-              <div class="aix-sync-row"><span>Notion · coaching notes</span><span class="ok">✓ SYNCED</span></div>
-              <div class="aix-sync-row"><span>Slack · team alerts</span><span class="ok">✓ SYNCED</span></div>
-              <div class="aix-sync-row"><span>Health scores · per account</span><span class="ok">✓ SYNCED</span></div>
-              <div class="aix-sync-row"><span>Milestone hits · onboarding</span><span class="ok">✓ SYNCED</span></div>
-              <div class="aix-sync-total"><span>→ One source of truth</span><b>LIVE</b></div>
+            <div class="aix-viz aix-before-after">
+              <div class="aix-ba-col">
+                <div class="aix-ba-head">Before</div>
+                <ul class="aix-ba-list">
+                  <li>Data split across 5 separate tools</li>
+                  <li>Weekly reports built by hand</li>
+                  <li>Advisors chasing status updates</li>
+                  <li>15+ hours lost every week</li>
+                </ul>
+              </div>
+              <div class="aix-ba-divider"></div>
+              <div class="aix-ba-col aix-ba-col--after">
+                <div class="aix-ba-head">After</div>
+                <ul class="aix-ba-list">
+                  <li>One view, always current</li>
+                  <li>Updates flow automatically</li>
+                  <li>80+ accounts in real time</li>
+                  <li>Zero manual data work</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -634,7 +647,7 @@ body{ background:var(--ink); }
   <!-- CTA -->
   <section class="aix-cta">
     <div class="wrap">
-      <span class="meta">§ 04 — Next</span>
+      <span class="meta">§ 04: Next</span>
       <h2>Let's build AI into <span class="ser">your</span> workflow.</h2>
       <p>Tell me where your team is losing the most time. There's almost always a number waiting to be moved.</p>
       <a href="/#contact" class="aix-btn aix-btn-fill">Get In Touch</a>
