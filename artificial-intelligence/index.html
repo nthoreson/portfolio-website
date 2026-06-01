@@ -69,7 +69,7 @@ body{ background:var(--ink); }
 }
 .aix-h1{
   font-weight:800; letter-spacing:-0.045em; line-height:0.92;
-  font-size:clamp(54px, 8.2vw, 124px); margin:0;
+  font-size:clamp(38px, 5.2vw, 80px); margin:0;
 }
 .aix-h1 .ser{
   font-style:italic; font-weight:400;
@@ -241,8 +241,8 @@ body{ background:var(--ink); }
 /* bar chart */
 .aix-bar{ display:grid; grid-template-columns:62px 1fr 56px; align-items:center; gap:16px; margin:18px 0; }
 .aix-bar .lab{ font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--muted-d); text-transform:uppercase; }
-.aix-bar .track{ height:30px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; }
-.aix-bar .fill{ height:100%; border-radius:2px; }
+.aix-bar .track{ display:block; height:30px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; }
+.aix-bar .fill{ display:block; height:100%; border-radius:2px; }
 .aix-bar .fill.lo{ width:27%; background:repeating-linear-gradient(45deg,#3a3a34,#3a3a34 6px,#323230 6px,#323230 12px); }
 .aix-bar .fill.hi{ width:100%; background:linear-gradient(90deg,var(--green),var(--green-bright)); }
 .aix-bar .pct{ font-weight:900; letter-spacing:-0.03em; font-size:22px; }
