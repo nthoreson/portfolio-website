@@ -15,7 +15,7 @@
 <meta name="description" content="AI systems built for marketing teams — product creation, data analysis, content automation, and workflow tools that actually ship.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
 /* =========================================================
@@ -36,7 +36,6 @@
   --line-soft:rgba(255,255,255,0.07);
   --line-paper:rgba(20,20,16,0.16);
   --mono:'Space Mono', ui-monospace, monospace;
-  --serif:'Instrument Serif', Georgia, serif;
 }
 body{ background:var(--ink); }
 .aix{ position:relative; color:#ece9e0; overflow:hidden; }
@@ -49,18 +48,6 @@ body{ background:var(--ink); }
   text-transform:uppercase; color:var(--green); font-weight:400;
 }
 .aix .meta-dim{ color:var(--muted-d); }
-
-/* ---- hairline ruled top bar that frames the whole page ---- */
-.aix-filebar{
-  border-bottom:1px solid var(--line);
-  background:rgba(12,12,11,0.6);
-}
-.aix-filebar .wrap{
-  display:flex; justify-content:space-between; align-items:center;
-  padding-top:14px; padding-bottom:14px; gap:16px; flex-wrap:wrap;
-}
-.aix-filebar .meta{ color:var(--muted-d); }
-.aix-filebar .meta b{ color:var(--green); font-weight:400; }
 
 /* ====================== HERO ====================== */
 .aix-hero{ position:relative; padding:90px 0 0; }
@@ -85,7 +72,7 @@ body{ background:var(--ink); }
   font-size:clamp(54px, 8.2vw, 124px); margin:0;
 }
 .aix-h1 .ser{
-  font-family:var(--serif); font-style:italic; font-weight:400;
+  font-style:italic; font-weight:400;
   letter-spacing:-0.01em; color:var(--green);
 }
 .aix-h1 .blk{ display:block; }
@@ -129,20 +116,6 @@ body{ background:var(--ink); }
 .aix-drow dd .hi{ color:var(--green); font-weight:700; }
 .aix-drow dd.stack{ font-family:var(--mono); font-size:12.5px; color:#cfccc2; letter-spacing:0.02em; line-height:1.7; }
 
-/* ====================== MARQUEE ====================== */
-.aix-marquee{
-  margin-top:90px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  background:var(--ink-2); overflow:hidden; white-space:nowrap;
-}
-.aix-marquee-track{ display:inline-flex; align-items:center; animation:aix-scroll 34s linear infinite; }
-.aix-marquee:hover .aix-marquee-track{ animation-play-state:paused; }
-.aix-marquee-track span{
-  font-family:var(--serif); font-style:italic; font-size:38px; color:#ece9e0;
-  padding:22px 0; margin:0 34px; opacity:0.92;
-}
-.aix-marquee-track .star{ color:var(--green); font-style:normal; font-family:var(--mono); font-size:16px; }
-@keyframes aix-scroll{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
-
 /* ====================== NUMBERS (PAPER) ====================== */
 .aix-paper{ background:var(--paper); color:var(--paper-ink); position:relative; }
 .aix-paper::after{
@@ -159,7 +132,7 @@ body{ background:var(--ink); }
 }
 .aix-ledger-head .meta{ color:#3a3a32; }
 .aix-ledger-head h2{
-  font-family:var(--serif); font-style:italic; font-weight:400; letter-spacing:-0.01em;
+  font-style:italic; font-weight:400; letter-spacing:-0.01em;
   font-size:clamp(30px,3.4vw,46px); margin:0; color:var(--paper-ink);
 }
 .aix-stat-rows{ display:block; }
@@ -189,7 +162,7 @@ body{ background:var(--ink); }
 .aix-mani-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; }
 .aix-mani-left .meta{ margin-bottom:26px; display:block; }
 .aix-creed{
-  font-family:var(--serif); font-weight:400; letter-spacing:-0.012em;
+  font-weight:400; letter-spacing:-0.012em;
   font-size:clamp(28px,3vw,42px); line-height:1.28; color:#f1eee6; margin:0;
 }
 .aix-creed em{ font-style:italic; color:var(--green); }
@@ -215,7 +188,7 @@ body{ background:var(--ink); }
   font-weight:800; letter-spacing:-0.04em; line-height:0.95;
   font-size:clamp(40px,5.5vw,76px); margin:14px 0 0;
 }
-.aix-work-intro h2 .ser{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--green); }
+.aix-work-intro h2 .ser{ font-style:italic; font-weight:400; color:var(--green); }
 .aix-work-intro p{ font-size:17px; line-height:1.6; color:#a9a69c; margin:0; max-width:460px; }
 
 .aix-chapter{ position:relative; border-top:1px solid var(--line); padding:78px 0; }
@@ -238,11 +211,11 @@ body{ background:var(--ink); }
   font-size:clamp(26px,2.7vw,38px); font-weight:800; letter-spacing:-0.03em;
   line-height:1.08; color:#f4f1e9; margin:0 0 4px; max-width:14ch;
 }
-.aix-ch-title .ser{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--green); }
+.aix-ch-title .ser{ font-style:italic; font-weight:400; color:var(--green); }
 .aix-ch-copy p{ font-size:16px; line-height:1.8; color:#b4b1a7; margin:0 0 20px; }
 .aix-ch-copy p:last-child{ margin-bottom:0; }
 .aix-ch-copy .dropcap::first-letter{
-  font-family:var(--serif); font-style:italic; font-size:3.4em; line-height:0.8;
+  font-style:italic; font-size:3.4em; line-height:0.8;
   float:left; padding:6px 12px 0 0; color:var(--green);
 }
 .aix-ch-copy strong{ color:#ece9e0; font-weight:700; }
@@ -321,7 +294,7 @@ body{ background:var(--ink); }
   font-weight:800; letter-spacing:-0.04em; line-height:0.98;
   font-size:clamp(40px,6vw,82px); margin:0 auto 22px; max-width:14ch;
 }
-.aix-cta h2 .ser{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--green); }
+.aix-cta h2 .ser{ font-style:italic; font-weight:400; color:var(--green); }
 .aix-cta p{ font-size:18px; color:#a9a69c; max-width:520px; margin:0 auto 38px; line-height:1.6; }
 
 /* ====================== RESPONSIVE ====================== */
@@ -337,10 +310,8 @@ body{ background:var(--ink); }
 @media (max-width:560px){
   .aix .wrap{ padding:0 22px; }
   .aix-hero{ padding:60px 0 0; }
-  .aix-marquee-track span{ font-size:28px; margin:0 22px; }
   .aix-ch-num{ font-size:84px; }
   .aix-result{ flex-direction:column; align-items:flex-start; gap:10px; }
-  .aix-filebar .wrap{ gap:8px; }
 }
 </style>
 </head>
@@ -378,14 +349,6 @@ body{ background:var(--ink); }
 </header>
 
 <main class="aix">
-
-  <!-- FILE BAR -->
-  <div class="aix-filebar">
-    <div class="wrap">
-      <span class="meta">CASE FILE — <b>AI &amp; AUTOMATION</b></span>
-      <span class="meta">OPERATOR / NATE THORESON · MINNEAPOLIS, MN</span>
-    </div>
-  </div>
 
   <!-- HERO -->
   <section class="aix-hero">
@@ -433,19 +396,6 @@ body{ background:var(--ink); }
       </aside>
     </div>
 
-    <!-- MARQUEE -->
-    <div class="aix-marquee" aria-hidden="true">
-      <div class="aix-marquee-track">
-        <span>Product Creation</span><span class="star">✦</span>
-        <span>Data Analysis</span><span class="star">✦</span>
-        <span>Content Pipelines</span><span class="star">✦</span>
-        <span>Workflow Automation</span><span class="star">✦</span>
-        <span>Product Creation</span><span class="star">✦</span>
-        <span>Data Analysis</span><span class="star">✦</span>
-        <span>Content Pipelines</span><span class="star">✦</span>
-        <span>Workflow Automation</span><span class="star">✦</span>
-      </div>
-    </div>
   </section>
 
   <!-- NUMBERS (PAPER) -->
