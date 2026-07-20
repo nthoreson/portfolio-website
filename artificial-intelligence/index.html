@@ -15,305 +15,8 @@
 <meta name="description" content="AI systems built for marketing teams: product creation, data analysis, content automation, and workflow tools that actually ship.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-<style>
-/* =========================================================
-   AI PAGE — "OPERATOR'S CASE FILE"
-   Self-contained, editorial redesign. Scoped under .aix
-   ========================================================= */
-:root{
-  --ink:#0c0c0b;
-  --ink-2:#15140f;
-  --paper:#f3efe6;
-  --paper-2:#e9e3d6;
-  --paper-ink:#1b1a16;
-  --green:#61B67C;
-  --green-bright:#7ff0a6;
-  --muted:#8c8a80;
-  --muted-d:#6f6d64;
-  --line:rgba(255,255,255,0.12);
-  --line-soft:rgba(255,255,255,0.07);
-  --line-paper:rgba(20,20,16,0.16);
-  --mono:'Space Mono', ui-monospace, monospace;
-}
-body{ background:var(--ink); }
-.aix{ position:relative; color:#ece9e0; overflow:hidden; }
-.aix ::selection{ background:var(--green); color:#06160c; }
-.aix .wrap{ max-width:1240px; margin:0 auto; padding:0 32px; }
-
-/* technical metadata label */
-.aix .meta{
-  font-family:var(--mono); font-size:11.5px; letter-spacing:0.18em;
-  text-transform:uppercase; color:var(--green); font-weight:400;
-}
-.aix .meta-dim{ color:var(--muted-d); }
-
-/* ====================== HERO ====================== */
-.aix-hero{ position:relative; padding:90px 0 0; }
-.aix-hero::before{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  background:
-    radial-gradient(900px 500px at 88% -8%, rgba(97,182,124,0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.015), transparent 30%);
-}
-.aix-hero-grid{
-  position:relative; display:grid; grid-template-columns:1.55fr 1fr;
-  gap:64px; align-items:end;
-}
-.aix-hero-head{ display:block; }
-.aix-kicker{ display:flex; align-items:center; gap:14px; margin-bottom:34px; }
-.aix-kicker .dotmark{
-  width:9px; height:9px; border-radius:50%; background:var(--green);
-  box-shadow:0 0 0 4px rgba(97,182,124,0.18); flex-shrink:0;
-}
-.aix-h1{
-  font-weight:800; letter-spacing:-0.045em; line-height:0.92;
-  font-size:clamp(38px, 5.2vw, 80px); margin:0;
-}
-.aix-h1 .ser{
-  font-style:italic;
-  letter-spacing:-0.01em; color:var(--green);
-}
-.aix-h1 .blk{ display:block; }
-.aix-lead{
-  font-size:clamp(17px,1.45vw,20px); color:#bdbab0; line-height:1.6;
-  max-width:560px; margin:34px 0 0;
-}
-.aix-cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:40px; }
-.aix-btn{
-  display:inline-flex; align-items:center; gap:10px; padding:15px 26px;
-  border-radius:2px; font-weight:700; font-size:14px; letter-spacing:-0.01em;
-  transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-}
-.aix-btn-fill{ background:var(--green); color:#06160c; }
-.aix-btn-fill:hover{ background:var(--green-bright); transform:translateY(-2px); }
-.aix-btn-ghost{
-  border:1px solid var(--line); color:#ece9e0; font-family:var(--mono);
-  font-weight:400; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase;
-}
-.aix-btn-ghost:hover{ border-color:var(--green); color:var(--green); }
-
-/* dossier card (right rail) */
-.aix-dossier{
-  border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.008));
-  border-radius:4px; overflow:hidden; align-self:end;
-}
-.aix-dossier-top{
-  display:flex; justify-content:space-between; align-items:center;
-  padding:13px 18px; border-bottom:1px solid var(--line-soft);
-  font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted-d);
-}
-.aix-dossier-top .stamp{ color:var(--green); }
-.aix-dossier dl{ margin:0; padding:8px 18px 18px; }
-.aix-drow{ padding:14px 0; border-bottom:1px dashed var(--line-soft); }
-.aix-drow:last-child{ border-bottom:0; }
-.aix-drow dt{
-  font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
-  color:var(--muted-d); margin-bottom:6px;
-}
-.aix-drow dd{ margin:0; font-size:15px; color:#e6e3d9; line-height:1.5; font-weight:500; }
-.aix-drow dd .hi{ color:var(--green); font-weight:700; }
-.aix-drow dd.stack{ font-family:var(--mono); font-size:12.5px; color:#cfccc2; letter-spacing:0.02em; line-height:1.7; }
-
-/* ====================== NUMBERS (PAPER) ====================== */
-.aix-paper{ background:var(--paper); color:var(--paper-ink); position:relative; }
-.aix-paper::after{
-  content:""; position:absolute; inset:0; pointer-events:none; opacity:0.5;
-  background-image:radial-gradient(rgba(20,20,16,0.04) 1px, transparent 1px);
-  background-size:5px 5px;
-}
-.aix-paper .wrap{ position:relative; z-index:1; }
-.aix-ledger{ padding:84px 0 90px; }
-.aix-ledger-head{
-  display:flex; justify-content:space-between; align-items:baseline;
-  border-bottom:2px solid var(--paper-ink); padding-bottom:18px; margin-bottom:0;
-  flex-wrap:wrap; gap:12px;
-}
-.aix-ledger-head .meta{ color:#3a3a32; }
-.aix-ledger-head h2{
-  font-style:italic; font-weight:400; letter-spacing:-0.01em;
-  font-size:clamp(30px,3.4vw,46px); margin:0; color:var(--paper-ink);
-}
-.aix-stat-rows{ display:block; }
-.aix-stat-row{
-  display:grid; grid-template-columns:0.9fr 1.2fr 1.4fr; gap:32px; align-items:center;
-  padding:38px 0; border-bottom:1px solid var(--line-paper);
-}
-.aix-stat-row:last-child{ border-bottom:0; }
-.aix-stat-fig{
-  font-weight:900; letter-spacing:-0.05em; line-height:0.85;
-  font-size:clamp(58px,7vw,104px); color:var(--paper-ink);
-}
-.aix-stat-fig .arrow{ color:var(--green); }
-.aix-stat-fig .was{ color:#a8a294; font-size:0.46em; font-weight:800; }
-.aix-stat-name{
-  font-weight:800; font-size:clamp(18px,1.6vw,22px); letter-spacing:-0.02em; color:var(--paper-ink);
-}
-.aix-stat-name .tick{
-  display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.16em;
-  text-transform:uppercase; color:#7a756a; margin-bottom:8px; font-weight:400;
-}
-.aix-stat-desc{ font-size:15px; line-height:1.65; color:#4a463d; }
-
-/* ====================== MANIFESTO ====================== */
-.aix-manifesto{ padding:110px 0 100px; position:relative; }
-.aix-manifesto .wrap{ position:relative; z-index:1; }
-.aix-mani-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; }
-.aix-mani-left .meta{ margin-bottom:26px; display:block; }
-.aix-creed{
-  font-weight:400; letter-spacing:-0.012em;
-  font-size:clamp(28px,3vw,42px); line-height:1.28; color:#f1eee6; margin:0;
-}
-.aix-creed em{ font-style:italic; color:var(--green); }
-.aix-principles{ display:flex; flex-direction:column; }
-.aix-principle{
-  display:grid; grid-template-columns:64px 1fr; gap:26px; align-items:start;
-  padding:30px 0; border-top:1px solid var(--line-soft);
-}
-.aix-principle:first-child{ border-top:0; padding-top:4px; }
-.aix-principle .pn{
-  font-family:var(--mono); font-size:13px; color:var(--green); letter-spacing:0.1em; padding-top:6px;
-}
-.aix-principle h3{
-  font-size:clamp(18px,1.6vw,21px); font-weight:800; letter-spacing:-0.02em;
-  color:#f1eee6; margin:0 0 12px; line-height:1.25;
-}
-.aix-principle p{ font-size:15px; line-height:1.72; color:#a9a69c; margin:0; }
-
-/* ====================== THE WORK / CHAPTERS ====================== */
-.aix-work-intro{ border-top:1px solid var(--line); padding:80px 0 30px; }
-.aix-work-intro .wrap{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:end; }
-.aix-work-intro h2{
-  font-weight:800; letter-spacing:-0.04em; line-height:0.95;
-  font-size:clamp(40px,5.5vw,76px); margin:14px 0 0;
-}
-.aix-work-intro h2 .ser{ font-style:italic; color:var(--green); }
-.aix-work-intro p{ font-size:17px; line-height:1.6; color:#a9a69c; margin:0; max-width:460px; }
-
-.aix-chapter{ position:relative; border-top:1px solid var(--line); padding:78px 0; }
-.aix-chapter:last-of-type{ border-bottom:1px solid var(--line); }
-.aix-ch-tab{
-  display:flex; justify-content:space-between; align-items:center; gap:16px;
-  margin-bottom:46px; flex-wrap:wrap;
-}
-.aix-ch-tab .meta-dim{ letter-spacing:0.14em; }
-.aix-ch-body{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start; }
-.aix-ch-num{
-  font-weight:900; letter-spacing:-0.05em; line-height:0.8;
-  font-size:clamp(96px,13vw,200px);
-  background:linear-gradient(180deg,#2c2b25, #15140f);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  -webkit-text-stroke:1px rgba(255,255,255,0.10);
-  margin:0 0 22px;
-}
-.aix-ch-title{
-  font-size:clamp(26px,2.7vw,38px); font-weight:800; letter-spacing:-0.03em;
-  line-height:1.08; color:#f4f1e9; margin:0 0 4px; max-width:14ch;
-}
-.aix-ch-title .ser{ font-style:italic; color:var(--green); }
-.aix-ch-copy p{ font-size:16px; line-height:1.8; color:#b4b1a7; margin:0 0 20px; }
-.aix-ch-copy p:last-child{ margin-bottom:0; }
-.aix-ch-copy .dropcap::first-letter{
-  font-style:italic; font-size:3.4em; line-height:0.8;
-  float:left; padding:6px 12px 0 0; color:var(--green);
-}
-.aix-ch-copy strong{ color:#ece9e0; font-weight:700; }
-
-/* exhibit / visual slot under chapter copy */
-.aix-exhibit{ margin-top:34px; }
-.aix-exhibit-cap{
-  display:flex; justify-content:space-between; align-items:center;
-  font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
-  color:var(--muted-d); margin-bottom:12px;
-}
-.aix-exhibit-cap .green{ color:var(--green); }
-.aix-shot{
-  width:100%; border:1px solid var(--line); border-radius:4px; display:block;
-  box-shadow:0 30px 80px rgba(0,0,0,0.55);
-}
-
-/* CSS data viz blocks */
-.aix-viz{
-  border:1px solid var(--line); border-radius:4px; padding:28px;
-  background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.006));
-}
-/* bar chart */
-.aix-bar{ display:grid; grid-template-columns:62px 1fr 56px; align-items:center; gap:16px; margin:18px 0; }
-.aix-bar .lab{ font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--muted-d); text-transform:uppercase; }
-.aix-bar .track{ display:block; height:30px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; }
-.aix-bar .fill{ display:block; height:100%; border-radius:2px; }
-.aix-bar .fill.lo{ width:27%; background:repeating-linear-gradient(45deg,#3a3a34,#3a3a34 6px,#323230 6px,#323230 12px); }
-.aix-bar .fill.hi{ width:100%; background:linear-gradient(90deg,var(--green),var(--green-bright)); }
-.aix-bar .pct{ font-weight:900; letter-spacing:-0.03em; font-size:22px; }
-.aix-bar .pct.dim{ color:#76746a; }
-.aix-bar .pct.green{ color:var(--green); }
-
-/* pipeline */
-.aix-pipe{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
-.aix-pipe .node{
-  font-family:var(--mono); font-size:12px; letter-spacing:0.02em; color:#ddd9cf;
-  border:1px solid var(--line); border-radius:2px; padding:9px 13px; background:rgba(255,255,255,0.02);
-}
-.aix-pipe .node.end{ border-color:var(--green); color:var(--green); }
-.aix-pipe .arr{ color:var(--green); font-family:var(--mono); }
-
-/* before/after */
-.aix-before-after{ display:grid; grid-template-columns:1fr 1px 1fr; gap:0 28px; align-items:start; }
-.aix-ba-divider{ background:var(--line); }
-.aix-ba-col{ padding:4px 0; }
-.aix-ba-head{ font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted-d); margin-bottom:16px; }
-.aix-ba-col--after .aix-ba-head{ color:var(--green); }
-.aix-ba-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
-.aix-ba-list li{ font-size:14px; line-height:1.5; color:#b4b1a7; padding-left:14px; position:relative; }
-.aix-ba-list li::before{ content:''; position:absolute; left:0; top:9px; width:6px; height:1px; background:var(--muted-d); }
-.aix-ba-col--after .aix-ba-list li{ color:#e6e3d9; }
-.aix-ba-col--after .aix-ba-list li::before{ background:var(--green); }
-
-/* result strip per chapter */
-.aix-result{
-  margin-top:30px; display:flex; align-items:center; gap:20px;
-  border-left:2px solid var(--green); padding:14px 0 14px 20px;
-}
-.aix-result .rfig{ font-weight:900; letter-spacing:-0.04em; font-size:clamp(28px,3vw,40px); color:#fff; line-height:1; white-space:nowrap; }
-.aix-result .rfig .arrow{ color:var(--green); }
-.aix-result .rtxt{ font-size:13.5px; line-height:1.55; color:#9d9a90; }
-.aix-result .rtxt b{ display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--green); margin-bottom:4px; font-weight:400; }
-
-/* ====================== CTA ====================== */
-.aix-cta{ position:relative; padding:120px 0 130px; border-top:1px solid var(--line); }
-.aix-cta::before{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  background:radial-gradient(700px 420px at 50% 120%, rgba(97,182,124,0.16), transparent 60%);
-}
-.aix-cta .wrap{ position:relative; z-index:1; text-align:center; }
-.aix-cta .meta{ margin-bottom:24px; }
-.aix-cta h2{
-  font-weight:800; letter-spacing:-0.04em; line-height:0.98;
-  font-size:clamp(40px,6vw,82px); margin:0 auto 22px; max-width:14ch;
-}
-.aix-cta h2 .ser{ font-style:italic; color:var(--green); }
-.aix-cta p{ font-size:18px; color:#a9a69c; max-width:520px; margin:0 auto 38px; line-height:1.6; }
-
-/* ====================== RESPONSIVE ====================== */
-@media (max-width:1000px){
-  .aix-hero-grid{ grid-template-columns:1fr; gap:48px; }
-  .aix-dossier{ max-width:520px; }
-  .aix-mani-grid,
-  .aix-work-intro .wrap,
-  .aix-ch-body{ grid-template-columns:1fr; gap:40px; }
-  .aix-stat-row{ grid-template-columns:1fr; gap:14px; padding:32px 0; }
-  .aix-stat-fig{ line-height:0.9; }
-}
-@media (max-width:560px){
-  .aix .wrap{ padding:0 22px; }
-  .aix-hero{ padding:60px 0 0; }
-  .aix-ch-num{ font-size:84px; }
-  .aix-result{ flex-direction:column; align-items:flex-start; gap:10px; }
-  .aix-before-after{ grid-template-columns:1fr; gap:24px 0; }
-  .aix-ba-divider{ display:none; }
-}
-</style>
 </head>
 <body>
 
@@ -348,313 +51,104 @@ body{ background:var(--ink); }
   </div>
 </header>
 
-<main class="aix">
+<!-- HERO -->
+<section class="page-hero dark-bg-texture" style="padding: 140px 0 100px;">
+  <div class="container">
+    <a href="/" class="back-link">← Back to home</a>
+    <span class="eyebrow">Specialties</span>
+    <h1>AI Systems Built to Move the Number</h1>
+    <p class="page-lead">I've built 20+ AI tools for marketing teams, systems that ship, run in production, and hold up under real client load. Every project here was built to move a specific number, not to demo well in a deck.</p>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="aix-hero">
-    <div class="wrap aix-hero-grid">
-      <div class="aix-hero-head">
-        <div class="aix-kicker">
-          <span class="dotmark"></span>
-          <span class="meta">Marketing AI · Built in Production</span>
-        </div>
-        <h1 class="aix-h1">
-          <span class="blk">AI systems</span>
-          <span class="blk"><span class="ser">built to move</span></span>
-          <span class="blk">the number.</span>
-        </h1>
-        <p class="aix-lead">I've built 20+ AI tools for marketing teams. Products that ship, pipelines that run in production, automation that holds up under real client load. Every project in this file was built to move a specific number, not to demo well in a deck.</p>
-        <div class="aix-cta-row">
-          <a href="/#contact" class="aix-btn aix-btn-fill">Get In Touch</a>
-          <a href="https://chatgpt.com/g/g-68c48228ce748191a1961bc6df79fe5f-homepage-writer-gpt-lean-marketing" target="_blank" rel="noopener" class="aix-btn aix-btn-ghost">Try a GPT free →</a>
-        </div>
+<!-- THE WORK -->
+<section class="web-work section-light" style="padding-top: 80px;">
+  <div class="container">
+    <p class="section-eyebrow">The Work</p>
+    <h3 class="big-title">Four systems. Four numbers.</h3>
+    <div class="story-grid">
+      <div class="story-card">
+        <h3>Product Creation</h3>
+        <p>Most AI work gets stuck in prototype mode, an interesting experiment that never becomes a tool anyone opens twice. The 1PMP Architect is a multi-step AI agent that generates a full marketing plan from raw client inputs in under 15 minutes, used by 100+ founders inside the Lean Marketing Accelerator to replace strategy work that used to take days. Lean Intelligence gives advisors a live view across 80+ client accounts without digging through five separate tools.</p>
       </div>
-
-      <aside class="aix-dossier">
-        <div class="aix-dossier-top">
-          <span>SPEC SHEET</span>
-          <span class="stamp">● IN PRODUCTION</span>
-        </div>
-        <dl>
-          <div class="aix-drow">
-            <dt>Discipline</dt>
-            <dd>Marketing AI &amp; workflow automation</dd>
-          </div>
-          <div class="aix-drow">
-            <dt>Shipped</dt>
-            <dd><span class="hi">20+</span> systems live for clients &amp; internal teams</dd>
-          </div>
-          <div class="aix-drow">
-            <dt>Proof on file</dt>
-            <dd><span class="hi">19% → 70%</span> renewal · <span class="hi">15+ hrs/wk</span> reclaimed · <span class="hi">100+</span> founders served</dd>
-          </div>
-          <div class="aix-drow">
-            <dt>Stack</dt>
-            <dd class="stack">Claude · n8n · OpenAI<br>HubSpot · Whisper · Make<br>Notion · Zapier · Slack</dd>
-          </div>
-        </dl>
-      </aside>
-    </div>
-
-  </section>
-
-  <!-- NUMBERS (PAPER) -->
-  <section class="aix-paper">
-    <div class="wrap aix-ledger">
-      <div class="aix-ledger-head">
-        <span class="meta">§ 01: Evidence</span>
-        <h2>By the numbers</h2>
+      <div class="story-card">
+        <h3>Data Analysis</h3>
+        <p>Clients were coming up for renewal without a clear way to see the value they'd built, so advisors went in on instinct. I built a system that pulls every piece of engagement data per client, call transcripts, health scores, milestones, support history, and synthesizes it into one report per account. Advisors walk into renewals with the data instead of the pitch. Renewal rate climbed from 19% to 70%.</p>
       </div>
-      <div class="aix-stat-rows">
-        <div class="aix-stat-row">
-          <div class="aix-stat-fig">20+</div>
-          <div class="aix-stat-name"><span class="tick">Output</span>AI products built</div>
-          <p class="aix-stat-desc">Custom tools and automations built for clients and internal teams, all in active production, not sitting in a sandbox.</p>
-        </div>
-        <div class="aix-stat-row">
-          <div class="aix-stat-fig"><span class="was">19%</span> <span class="arrow">→</span> 70%</div>
-          <div class="aix-stat-name"><span class="tick">Outcome</span>Renewal rate</div>
-          <p class="aix-stat-desc">Climbed from 19% after deploying AI-powered client engagement reports across 80+ accounts at Lean Marketing.</p>
-        </div>
-        <div class="aix-stat-row">
-          <div class="aix-stat-fig">15+</div>
-          <div class="aix-stat-name"><span class="tick">Reclaimed</span>Weekly hours saved</div>
-          <p class="aix-stat-desc">Recurring automations that quietly delete manual, repetitive work for the team, running every week without babysitting.</p>
-        </div>
+      <div class="story-card">
+        <h3>Content Creation</h3>
+        <p>The best marketing content for a business is usually buried inside it, in client calls and advisor insights nobody writes down. I built a pipeline that starts with coaching call recordings and ends with finished drafts, transcribed, run through a model trained on real content examples, and routed into LinkedIn posts, email sequences, and blog drafts. A 60-minute call becomes 3-5 finished pieces in under 20 minutes.</p>
+      </div>
+      <div class="story-card">
+        <h3>Automation</h3>
+        <p>Most marketing teams have their data spread across five tools with nothing keeping any of it in sync. I built the automations that made one source of truth for the whole team: new client onboards, coaching notes, milestones, and health scores flow into the right places automatically. The team stopped chasing spreadsheets and got back 15+ hours a week.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MANIFESTO -->
-  <section class="aix-manifesto">
-    <div class="wrap aix-mani-grid">
-      <div class="aix-mani-left">
-        <span class="meta">§ 02: The Approach</span>
-        <p class="aix-creed">Small teams should not have to move slow. The hours a good marketer spends on predictable work are hours that <em>compound into nothing</em>, while the irreplaceable work waits. That gap is what I build AI to close.</p>
+<!-- NUMBERS -->
+<section class="numbers-block">
+  <div class="container">
+    <h3>By the Numbers</h3>
+    <div class="numbers-grid">
+      <div class="num-item">
+        <span class="big-num">20+</span>
+        <h4>AI Products Built</h4>
+        <p>Custom tools and automations in active production for clients and internal teams.</p>
       </div>
-      <div class="aix-principles">
-        <div class="aix-principle">
-          <span class="pn">P.01</span>
-          <div>
-            <h3>Real products, in production</h3>
-            <p>Every tool I build is live, in use, and load-bearing for the team that runs it. The bar for shipping is whether the team would feel its absence if it disappeared tomorrow, a higher bar than "it worked in testing," and the only one that produces durable systems.</p>
-          </div>
-        </div>
-        <div class="aix-principle">
-          <span class="pn">P.02</span>
-          <div>
-            <h3>Automate the predictable, leave the exception to the human</h3>
-            <p>If a marketer does the same task the same way every time, that task is a candidate for automation. The human's role in a well-designed system is the edge cases, the judgment calls, and the work that actually requires their pattern recognition. Anything below that line shouldn't be on their plate.</p>
-          </div>
-        </div>
-        <div class="aix-principle">
-          <span class="pn">P.03</span>
-          <div>
-            <h3>Measure what actually changes</h3>
-            <p>An AI system that doesn't move a number isn't working, no matter how impressive the output looks. Every project here was built against a specific outcome and measured against whether it produced the change. Without that discipline, AI work becomes a portfolio of demos instead of a portfolio of results.</p>
-          </div>
-        </div>
+      <div class="num-item">
+        <span class="big-num">19% → 70%</span>
+        <h4>Renewal Rate</h4>
+        <p>After deploying AI-powered client engagement reports across 80+ accounts.</p>
+      </div>
+      <div class="num-item">
+        <span class="big-num">15+</span>
+        <h4>Weekly Hours Reclaimed</h4>
+        <p>Recurring automation that deletes manual, repetitive work, every week, without babysitting.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- THE WORK -->
-  <section class="aix-work-intro">
-    <div class="wrap">
-      <div>
-        <span class="meta">§ 03: The Work</span>
-        <h2>Four <span class="ser">case</span><br>studies.</h2>
-      </div>
-      <p>Four areas where I've shipped AI systems that produced measurable change inside real businesses. Each one starts with a problem worth solving and ends with a number that moved.</p>
-    </div>
-  </section>
+<!-- HOW I BUILD -->
+<section class="methodology section-light">
+  <div class="container">
+    <p class="section-eyebrow">How I Build</p>
+    <h3 class="big-title">AI that has to earn its place.</h3>
+    <p class="method-intro">I don't build AI to look impressive in a demo. I build it to move a specific number, and if it doesn't, it doesn't ship.</p>
 
-  <!-- CHAPTER 01 -->
-  <section class="aix-chapter">
-    <div class="wrap">
-      <div class="aix-ch-tab">
-        <span class="meta">CH. 01: Product Creation</span>
-        <span class="meta meta-dim">STACK: CLAUDE / N8N / OPENAI / WEBFLOW / HUBSPOT</span>
-      </div>
-      <div class="aix-ch-body">
+    <div class="philosophy-grid">
+      <div class="pillar">
         <div>
-          <div class="aix-ch-num">01</div>
-          <h3 class="aix-ch-title">AI products that ship <span class="ser">and get used</span></h3>
-        </div>
-        <div class="aix-ch-copy">
-          <p class="dropcap">Most AI work gets stuck in prototype mode: the difference between an interesting experiment and a tool people open every day. The work in this file went into production and stayed there.</p>
-          <p>This portfolio site was built with Claude Code as a development partner, end to end. The <strong>1PMP Architect</strong> is a multi-step AI agent that generates a complete marketing plan from raw client inputs in under 15 minutes, used by 100+ founders inside the Lean Marketing Accelerator to produce strategy documents that previously took days. <strong>Lean Intelligence</strong> is an internal analytics dashboard that gives advisors a live view across 80+ client accounts without digging through five separate tools, eliminating the manual report-pull that used to eat hours a week.</p>
-
-          <div class="aix-exhibit">
-            <div class="aix-exhibit-cap">
-              <span>EXHIBIT A: <span class="green">live automation workflow</span></span>
-              <span>FIG. 01</span>
-            </div>
-            <img class="aix-shot" src="https://cdn.prod.website-files.com/62ed6adbde80f127c7615f6b/69124120dbc2f1a2442047d9_Screenshot%202025-11-10%20at%201.40.52%E2%80%AFPM.png" alt="AI automation workflow built in production">
-          </div>
-
-          <div class="aix-result">
-            <div class="rfig">100+</div>
-            <div class="rtxt"><b>Active users</b>Founders running the 1PMP Architect to generate full marketing plans that used to take days.</div>
-          </div>
+          <h4>Real Products, In Production</h4>
+          <p>The bar for shipping is whether the team would feel its absence if it disappeared tomorrow. Anything less is a demo, not a system.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 02 -->
-  <section class="aix-chapter">
-    <div class="wrap">
-      <div class="aix-ch-tab">
-        <span class="meta">CH. 02: Data Analysis</span>
-        <span class="meta meta-dim">STACK: CLAUDE / HUBSPOT / N8N / TRANSCRIPT ANALYSIS</span>
-      </div>
-      <div class="aix-ch-body">
+      <div class="pillar">
         <div>
-          <div class="aix-ch-num">02</div>
-          <h3 class="aix-ch-title">Turning client data into <span class="ser">renewal revenue</span></h3>
-        </div>
-        <div class="aix-ch-copy">
-          <p class="dropcap">At Lean Marketing, clients were coming up for renewal without a clear way to see the value they'd built. Advisors went into those conversations on instinct, which produces exactly the renewal rate you'd expect when nobody has the receipts in front of them.</p>
-          <p>I built an AI system that pulled every piece of engagement data per client: coaching call transcripts, health scores, milestone wins, support interactions, session attendance, sentiment signals, and synthesized it into a single report per account. Internally we called it <strong>holding up the mirror</strong>, because it showed clients what they'd actually built over the engagement, in evidence rather than narrative. Advisors walked into renewals with the data instead of the pitch, and the numbers followed.</p>
-
-          <div class="aix-exhibit">
-            <div class="aix-exhibit-cap">
-              <span>EXHIBIT B: <span class="green">renewal rate, before vs. after</span></span>
-              <span>FIG. 02</span>
-            </div>
-            <div class="aix-viz">
-              <div class="aix-bar">
-                <span class="lab">Before</span>
-                <span class="track"><span class="fill lo"></span></span>
-                <span class="pct dim">19%</span>
-              </div>
-              <div class="aix-bar">
-                <span class="lab">After</span>
-                <span class="track"><span class="fill hi"></span></span>
-                <span class="pct green">70%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="aix-result">
-            <div class="rfig"><span style="color:#76746a">19%</span> <span class="arrow">→</span> 70%</div>
-            <div class="rtxt"><b>Renewal rate</b>After deploying AI-powered engagement reports for 80+ clients at Lean Marketing.</div>
-          </div>
+          <h4>Automate the Predictable</h4>
+          <p>If a marketer does the same task the same way every time, that task belongs to a machine. Judgment calls stay with the people who can actually make them.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 03 -->
-  <section class="aix-chapter">
-    <div class="wrap">
-      <div class="aix-ch-tab">
-        <span class="meta">CH. 03: Content Creation</span>
-        <span class="meta meta-dim">STACK: CLAUDE / WHISPER / N8N / CUSTOM GPTS</span>
-      </div>
-      <div class="aix-ch-body">
+      <div class="pillar">
         <div>
-          <div class="aix-ch-num">03</div>
-          <h3 class="aix-ch-title">Calls in, <span class="ser">content out</span></h3>
-        </div>
-        <div class="aix-ch-copy">
-          <p class="dropcap">The best marketing content for a business is usually buried inside it, sitting in client conversations, advisor insights, and the stories that never get written down. Most teams know this and still can't operationalize it, because the path from "we said something useful on a call" to "we have a finished post" takes hours of manual lift nobody has.</p>
-          <p>I built a content pipeline at Lean Marketing that starts with coaching call recordings and ends with finished drafts. Recordings get transcribed, run through a prompt pipeline that extracts insights, client wins, and teachable moments, then routed into LinkedIn posts, email sequences, and blog drafts. The voice is a <strong>trained model built from real content examples, not a template</strong>, so the output sounds like the company, instead of like every other AI content stack on the market.</p>
-
-          <div class="aix-exhibit">
-            <div class="aix-exhibit-cap">
-              <span>EXHIBIT C: <span class="green">the content pipeline</span></span>
-              <span>FIG. 03</span>
-            </div>
-            <div class="aix-viz">
-              <div class="aix-pipe">
-                <span class="node">Coaching call</span>
-                <span class="arr">→</span>
-                <span class="node">Transcribe</span>
-                <span class="arr">→</span>
-                <span class="node">Extract insights</span>
-                <span class="arr">→</span>
-                <span class="node">Draft in trained voice</span>
-                <span class="arr">→</span>
-                <span class="node end">Published ✓</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="aix-result">
-            <div class="rfig">&lt; 20 min</div>
-            <div class="rtxt"><b>Turnaround</b>A 60-minute coaching call becomes 3–5 finished content pieces, grounded in real conversation, not a blank page.</div>
-          </div>
+          <h4>Measure What Actually Changes</h4>
+          <p>An AI system that doesn't move a number isn't working, no matter how impressive the output looks. Every project here was built against a specific outcome.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CHAPTER 04 -->
-  <section class="aix-chapter">
-    <div class="wrap">
-      <div class="aix-ch-tab">
-        <span class="meta">CH. 04: Automation</span>
-        <span class="meta meta-dim">STACK: N8N / HUBSPOT / NOTION / MAKE / SLACK / ZAPIER</span>
-      </div>
-      <div class="aix-ch-body">
-        <div>
-          <div class="aix-ch-num">04</div>
-          <h3 class="aix-ch-title">One source of truth for <span class="ser">the whole team</span></h3>
-        </div>
-        <div class="aix-ch-copy">
-          <p class="dropcap">Most marketing teams have their data spread across five tools with nothing keeping any of it in sync. Advisors chase updates, managers build manual reports, and nobody works from the same picture, meaning every decision is being made on data that's some flavor of stale.</p>
-          <p>At Lean Marketing, I built a set of automations that created a single source of truth the whole team could trust. New client onboards, coaching notes, milestone hits, and health score changes flow into the right places automatically. The system handles the routing, the humans handle the advising. The team stopped chasing spreadsheets and started spending their time on the work that actually moves accounts.</p>
-
-          <div class="aix-exhibit">
-            <div class="aix-exhibit-cap">
-              <span>EXHIBIT D: <span class="green">before and after</span></span>
-              <span>FIG. 04</span>
-            </div>
-            <div class="aix-viz aix-before-after">
-              <div class="aix-ba-col">
-                <div class="aix-ba-head">Before</div>
-                <ul class="aix-ba-list">
-                  <li>Data split across 5 separate tools</li>
-                  <li>Weekly reports built by hand</li>
-                  <li>Advisors chasing status updates</li>
-                  <li>15+ hours lost every week</li>
-                </ul>
-              </div>
-              <div class="aix-ba-divider"></div>
-              <div class="aix-ba-col aix-ba-col--after">
-                <div class="aix-ba-head">After</div>
-                <ul class="aix-ba-list">
-                  <li>One view, always current</li>
-                  <li>Updates flow automatically</li>
-                  <li>80+ accounts in real time</li>
-                  <li>Zero manual data work</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="aix-result">
-            <div class="rfig">15+ hrs</div>
-            <div class="rtxt"><b>Reclaimed weekly</b>Per week, recurring, with no manual intervention required to keep it running.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="aix-cta">
-    <div class="wrap">
-      <span class="meta">§ 04: Next</span>
-      <h2>Let's build AI into <span class="ser">your</span> workflow.</h2>
-      <p>Tell me where your team is losing the most time. There's almost always a number waiting to be moved.</p>
-      <a href="/#contact" class="aix-btn aix-btn-fill">Get In Touch</a>
-    </div>
-  </section>
-
-</main>
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to put AI to work?</h2>
+    <p>Tell me where your team is losing the most time. There's almost always a number waiting to be moved.</p>
+    <a href="/#contact" class="btn btn-primary">Get In Touch</a>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
