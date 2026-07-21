@@ -56,7 +56,7 @@ revealEls.forEach(el => el.classList.add('reveal'));
   document.querySelectorAll(selector).forEach(container => {
     Array.from(container.children).forEach((child, i) => {
       if (child.classList.contains('reveal')) {
-        child.style.transitionDelay = `${i * 75}ms`;
+        child.style.transitionDelay = `${Math.min(i, 5) * 75}ms`;
       }
     });
   });
