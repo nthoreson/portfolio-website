@@ -38,6 +38,7 @@ document.addEventListener('click', (e) => {
 const revealEls = document.querySelectorAll([
   '.section-eyebrow', '.section-title', '.big-title', '.section-sub',
   '.about-copy', '.method-intro',
+  '.sys-domain', '.sys-section h2', '.sys-lead', '.sys-figure', '.sys-outcome',
   '.stat', '.spec-card', '.testimonial', '.exp-card',
   '.cs-card', '.timeline-item', '.profile-card',
   '.work-card', '.step', '.work-tile',

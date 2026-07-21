@@ -1959,74 +1959,213 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   padding: 4px 12px;
 }
 
-/* ---------- FLOW CARDS (numbered process visuals) ---------- */
-.flow-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-.flow-card {
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 28px;
-}
-.flow-num {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #61B67C;
-  margin-bottom: 12px;
-}
-.flow-card h4 { font-size: 18px; font-weight: 700; color: #f5f5f5; margin-bottom: 8px; }
-.flow-card p { color: #a3a3a3; font-size: 14px; line-height: 1.6; }
+/* ==========================================================================
+   AI SYSTEMS PAGE — architecture diagram language
+   Semantic node roles: sand = raw/human input, green = AI processing,
+   steel = structured destination. Motion travels the real edges only.
+   ========================================================================== */
 
-/* Animated diagram track (motion cue above a flow/pillar sequence) */
-.diagram-track {
-  position: relative;
-  height: 2px;
-  background: rgba(97, 182, 124, 0.15);
-  margin: 40px 0 8px;
-  border-radius: 2px;
+.sys-section {
+  padding: 96px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #111111;
+}
+.sys-head { max-width: 780px; }
+.sys-domain {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #61B67C;
+  margin-bottom: 18px;
+}
+.sys-domain em {
+  font-style: normal;
+  color: #6b6b6b;
+}
+.sys-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+.sys-lead {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #a3a3a3;
+}
+
+/* Figure frame that holds a diagram or a captured artifact */
+.sys-figure {
+  margin-top: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  background: #141414;
   overflow: hidden;
 }
-.diagram-dot {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  margin-top: -5px;
-  border-radius: 50%;
-  background: #61B67C;
-  box-shadow: 0 0 12px rgba(97, 182, 124, 0.8);
-  animation: diagram-flow 3.5s ease-in-out infinite;
+.sys-figure-body {
+  padding: 32px;
+  overflow-x: auto;
 }
-@keyframes diagram-flow {
-  0% { left: 0%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { left: calc(100% - 10px); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .diagram-dot { animation: none; left: calc(50% - 5px); opacity: 1; }
+.sys-figure svg { display: block; width: 100%; height: auto; }
+.sys-figure-body > svg { min-width: 660px; }
+.sys-figure figcaption {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #737373;
+  background: #101010;
 }
 
-/* GPT tile icon */
-.gpt-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(97, 182, 124, 0.12);
-  color: #61B67C;
+/* Captured artifact (real screenshot) gets window chrome so it reads as evidence */
+.artifact-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #101010;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #8a8a8a;
+}
+.artifact-shot { display: block; width: 100%; }
+
+/* Outcome line: one fact, stated plainly, tied to the system above it */
+.sys-outcome {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 28px;
+  padding-left: 20px;
+  border-left: 2px solid #61B67C;
+}
+.sys-outcome b {
+  font-size: 26px;
   font-weight: 800;
-  font-size: 18px;
-  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  color: #61B67C;
+}
+.sys-outcome span { font-size: 15px; color: #a3a3a3; }
+
+/* Range stats need to stay on one line inside the four-column grid */
+.big-num--range { font-size: clamp(34px, 3.4vw, 46px); white-space: nowrap; }
+
+/* Two-up: captured artifact beside its system diagram */
+.sys-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 44px;
+}
+.sys-split { align-items: stretch; }
+.sys-split .sys-figure {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sys-split .sys-figure-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.sys-split .sys-figure-body > svg { min-width: 0; }
+
+/* GPT library: a collection, not a pipeline, so it is not numbered */
+.gpt-lib {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-top: 44px;
+}
+.gpt-chip {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: #171717;
+  padding: 18px 20px;
+}
+.gpt-chip strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8e8e8;
+  margin-bottom: 5px;
+}
+.gpt-chip span { font-size: 13px; color: #737373; line-height: 1.5; }
+.gpt-chip--more {
+  border-style: dashed;
+  border-color: rgba(97, 182, 124, 0.35);
+  background: rgba(97, 182, 124, 0.05);
+  display: flex;
+  align-items: center;
+}
+.gpt-chip--more strong { color: #61B67C; margin: 0; }
+
+/* Hero system bus: introduces the diagram language and indexes the six systems */
+.sys-bus { margin-top: 52px; overflow-x: auto; }
+.sys-bus svg { display: block; width: 100%; min-width: 720px; height: auto; }
+.sys-bus a text { transition: fill .2s; }
+.sys-bus a:hover .bus-label { fill: #61B67C; }
+.sys-bus a:hover .bus-node { stroke: #61B67C; }
+.sys-bus a:focus-visible { outline: 2px solid #61B67C; outline-offset: 4px; }
+
+/* ---- Diagram primitives (shared by every SVG on the page) ---- */
+.dgm-node { fill: #171717; stroke: rgba(255, 255, 255, 0.12); stroke-width: 1; }
+.dgm-node--src { fill: rgba(212, 180, 131, 0.07); stroke: rgba(212, 180, 131, 0.45); }
+.dgm-node--ai  { fill: rgba(97, 182, 124, 0.08); stroke: rgba(97, 182, 124, 0.5); }
+.dgm-node--dst { fill: rgba(143, 179, 201, 0.07); stroke: rgba(143, 179, 201, 0.42); }
+
+.dgm-name {
+  fill: #ededed;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dgm-role {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.dgm-role--src { fill: #D4B483; }
+.dgm-role--ai  { fill: #61B67C; }
+.dgm-role--dst { fill: #8FB3C9; }
+.dgm-payload {
+  fill: #6f6f6f;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.dgm-edge {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 1.5;
+}
+.dgm-edge--live {
+  stroke: rgba(97, 182, 124, 0.55);
+  stroke-dasharray: 3 7;
+  animation: dgm-travel 1.4s linear infinite;
+}
+@keyframes dgm-travel { to { stroke-dashoffset: -20; } }
+
+.dgm-tick { stroke: rgba(255, 255, 255, 0.1); stroke-width: 1; }
+.dgm-arrow { fill: rgba(97, 182, 124, 0.55); }
+.dgm-band { fill: rgba(255, 255, 255, 0.02); stroke: rgba(255, 255, 255, 0.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dgm-edge--live { animation: none; stroke-dasharray: none; }
+}
+
+@media (max-width: 860px) {
+  .sys-section { padding: 72px 0; }
+  .sys-split { grid-template-columns: 1fr; }
+  .sys-figure-body { padding: 20px; }
 }
 
 /* CTA banner */
