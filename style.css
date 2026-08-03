@@ -30,8 +30,6 @@ h1, h2, h3, h4, h5 { line-height: 1.15; font-weight: 700; letter-spacing: -0.02e
   color: #0a0a0a;
 }
 .btn-primary:hover { transform: translateY(-2px); background: #6ee9a0; }
-.hero .btn-primary { background: #e03131; color: #ffffff; }
-.hero .btn-primary:hover { background: #f03e3e; }
 
 .section-eyebrow {
   font-size: 13px;
